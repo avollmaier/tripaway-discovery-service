@@ -8,6 +8,13 @@ server:
       max: 50
       min-spare: 5
 
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: ${DISCOVERY_SERVICE_URL:http://localhost:${server.port}/eureka/}
+
 spring:
   application:
     name: discovery-service
